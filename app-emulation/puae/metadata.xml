@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer>
+  <email>sven.eden@gmx.de</email>
+  <description>The creator of this ebuild, but not the official maintainer</description>
+</maintainer>
+<!-- <longdescription></longdescription> -->
+<use>
+  <flag name='profiling'>Build a profiling (SLOW!) version</flag>
+<!-- currently broken, won't compile/link  <flag name='a2065'>Enable A2065 Ethernet emulation</flag> -->
+  <flag name='a2091'>Enable A2091 SCSI emulation</flag>
+  <flag name='audio'>Enable audio output (needs either alsa or sdl-sound USE flag)</flag>
+  <flag name='amax'>Enable AMAX support</flag>
+  <flag name='bsdsock'>Enable bsdsocket.library emulation</flag>
+  <flag name='cdtv'>Enable CDTV emulation</flag>
+  <flag name='cd32'>Enable CD32 emulation</flag>
+  <flag name='debugger'>Enable internal debugger/monitor</flag>
+  <flag name='dga'>X11 version: Use the DGA extension</flag>
+  <flag name='drvsnd'>Enable Floppy Drive Sound Emulation</flag>
+  <flag name='enforcer'>Enable ersatz Enforcer support</flag>
+  <flag name='gayle'>Enable GAYLE IDE emulation</flag>
+  <flag name='fpu'>Enable FPU emulation</flag>
+  <flag name='jit'>Enable JIT compiler (x86 only)</flag>
+  <flag name='natmem'>Enable JIT direct memory support (x86 only)</flag>
+  <flag name='noflags'>Enable noflags support in JIT (x86 only)</flag>
+  <flag name='ncr'>Enable NCR SCSI emulation</flag>
+  <flag name='scsi-device'>Enable emulation of SCSI devices</flag>
+  <flag name='save-state'>Enable support for saving state snapshots</flag>
+  <flag name='threads'>Enable thread support</flag>
+  <flag name='ui'>Use a user interface if possible</flag>
+  <flag name='vidmode'>X11 version: Use the XF86VidMode extension</flag>
+  <flag name='xarcade'>Enable keymaps for X-Arcade joysticks</flag>
+  <flag name='sdl'>Use SDL library for low-level functions</flag>
+  <flag name='sdl-sound'>Use SDL library for sound</flag>
+  <flag name='sdl-gfx'>Use SDL library for graphics</flag>
+  <flag name='sdl-gl'>Allow GL for 2D acceleration with SDL graphics</flag>
+  <flag name='qt'>Use QT library for graphics/ui instead of gtk/sdl (incomplete!)</flag>  
+  <flag name='curses'>Use ncurses library for graphics</flag>
+  <flag name='alsa'>Use ALSA library for sound</flag>
+  <flag name='X'>Use the X Window System</flag>
+</use>
+</pkgmetadata>

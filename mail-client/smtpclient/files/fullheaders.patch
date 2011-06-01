@@ -1,0 +1,103 @@
+--- smtpclient-1.0.0/smtpclient_main.c	1997-10-21 18:56:27.000000000 +0200
++++ smtpclient-1.0.0/smtpclient_main.c	2004-02-25 17:14:24.000000000 +0100
+@@ -60,6 +60,7 @@
+ static char *from_addr  = NULL;
+ static char *mailhost   = NULL;
+ static int   mailport   = 25;
++static int   full_mail  = 0;
+ static char *reply_addr = 0;
+ static char *subject    = 0;
+ static int   mime_style = 0;
+@@ -120,6 +121,9 @@
+     fprintf(stderr, "  -V, --version          display version string\n");
+     fprintf(stderr, "  -h, --help             display this page\n");
+     fprintf(stderr, "\n");
++    fprintf(stderr, "Sendmail -ot faking:\n");
++    fprintf(stderr, "  -F, --full-mail        input is a full mail, so the original headers will remain unchanged\n");
++    fprintf(stderr, "\n");
+     return;
+ }
+ 
+@@ -290,6 +294,7 @@
+     { "smtp-port",    1, NULL, 'p' },
+     { "mime-encode",  0, NULL, 'M' },
+     { "use-syslog",   0, NULL, 'L' },
++    { "full-mail",    0, NULL, 'F' },
+     { "verbose",      0, NULL, 'v' },
+     { "version",      0, NULL, 'V' },
+     { "help",         0, NULL, 'h' }
+@@ -317,7 +322,7 @@
+     /*
+      *  Parse options
+      */
+-    while ((c = getopt_long(argc, argv, ":s:f:r:e:c:S:P:MLvVh", options, NULL)) != EOF) {
++    while ((c = getopt_long(argc, argv, ":s:f:r:e:c:S:P:FMLvVh", options, NULL)) != EOF) {
+         switch (c) {
+             case 's':
+                 subject = optarg;
+@@ -340,6 +345,9 @@
+             case 'P':
+                 mailport = atoi(optarg);
+                 break;
++            case 'F':
++                full_mail = 1;
++                break;
+             case 'M':
+                 mime_style = 1;
+                 break;
+@@ -460,35 +468,37 @@
+     /* 
+      *  Give out Message header. 
+      */
+-    fprintf(sfp, "From: %s\r\n", from_addr);
+-    if (subject)
+-        fprintf(sfp, "Subject: %s\r\n", subject);
+-
+-    if (reply_addr)
++    if (!full_mail) { // As long as user dont want to provide full mail
++      fprintf(sfp, "From: %s\r\n", from_addr);
++      if (subject)
++        fprintf(sfp, "Subject: %s\r\n", subject);
++      
++      if (reply_addr)
+         fprintf(sfp, "Reply-To: %s\r\n", reply_addr);
+-    if (err_addr)
++      if (err_addr)
+         fprintf(sfp, "Errors-To: %s\r\n", err_addr);
+-    if ((pwd = getpwuid(getuid())) == 0) {
++      if ((pwd = getpwuid(getuid())) == 0) {
+         fprintf(sfp, "Sender: userid-%d@%s\r\n", getuid(), my_name);
+-    } else {
++      } else {
+         fprintf(sfp, "Sender: %s@%s\r\n", pwd->pw_name, my_name);
+-    }
+-
+-    fprintf(sfp, "To: %s", argv[optind]);
+-    for (i = optind + 1; i < argc; i++)
++      }
++      
++      fprintf(sfp, "To: %s", argv[optind]);
++      for (i = optind + 1; i < argc; i++)
+         fprintf(sfp, ",%s", argv[i]);
+-    fprintf(sfp, "\r\n");
+-    if (cc_addr)
++      fprintf(sfp, "\r\n");
++      if (cc_addr)
+         fprintf(sfp, "Cc: %s\r\n", cc_addr);
+-
+-    if (mime_style) {
++      
++      if (mime_style) {
+         fprintf(sfp, "MIME-Version: 1.0\r\n");
+         fprintf(sfp, "Content-Type: text/plain; charset=ISO-8859-1\r\n");
+         fprintf(sfp, "Content-Transfer-Encoding: quoted-printable\r\n");
++      }
++      
++      fprintf(sfp, "\r\n");
+     }
+ 
+-    fprintf(sfp, "\r\n");
+-
+     /* 
+      *  Give out Message body.
+      */
