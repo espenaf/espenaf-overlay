@@ -8,7 +8,6 @@ EAPI=3
 
 DESCRIPTION="Multitouch-X-Driver for MT-Touchpads"
 HOMEPAGE="http://bitmath.org/code/multitouch/"
-#SRC_URI="http://github.com/rydberg/Multitouch-X-Driver/tarball/v1.0-alpha3"
 SRC_URI="http://github.com/rydberg/Multitouch-X-Driver/tarball/v${PV/_/-} -> ${P}.tar.gz"
 
 S="${WORKDIR}/rydberg-Multitouch-X-Driver-90c1b69"
