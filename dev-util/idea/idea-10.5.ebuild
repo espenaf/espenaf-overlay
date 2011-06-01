@@ -17,7 +17,7 @@ HOMEPAGE="http://jetbrains.com/idea/"
 SRC_URI="http://download.jetbrains.com/${PN}/${PN}IU-${PV}.tar.gz"
 LICENSE="IntelliJ-IDEA"
 IUSE=""
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="x86 amd64"
 S="${WORKDIR}/${PN}-IU-${MY_PV}"
 
 src_install() {
