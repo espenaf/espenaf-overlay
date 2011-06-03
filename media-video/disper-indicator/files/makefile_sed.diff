@@ -1,0 +1,12 @@
+--- Makefile.org        2011-06-03 08:09:20.734667097 +0200
++++ Makefile    2011-06-03 08:09:37.973667105 +0200
+@@ -7,7 +7,7 @@
+ INSTALL = install
+ VERSION = 0.2.1
+ 
+-all:
++all: src/disper-applet.py.substituted data/Disper-Indicator.desktop
+ 
+ src/disper-applet.py.substituted: src/disper-applet.py
+        sed -e "s|^__prefix__\s*=.*$$|__prefix__='$(PREFIX)'|" <$< >$@
+
