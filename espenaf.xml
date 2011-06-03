@@ -1,2 +1,13 @@
-<overlay type="git" src="git://github.com/espenaf/espenaf-overlay.git" contact="espenaf@gmail.com" status="unofficial" 
-name="espenaf"><description>espenaf Gentoo overlay</description></overlay>
+?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[espenaf]]></name>
+    <description><![CDATA[espenaf Gentoo overlay]]></description>
+    <homepage>https://wiki.github.com/espenaf/</homepage>
+    <owner>
+      <email>espenaf@gmail.com</email>
+    </owner>
+    <source type="git">git://github.com/espenaf/espenaf-overlay.git</source>
+  </repo>
+</repositories>
