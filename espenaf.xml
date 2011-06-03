@@ -1,0 +1,2 @@
+<overlay type="git" src="git://github.com/espenaf/espenaf-overlay.git" contact="espenaf@gmail.com" status="unofficial" 
+name="espenaf"><description>espenaf Gentoo overlay</description></overlay>
