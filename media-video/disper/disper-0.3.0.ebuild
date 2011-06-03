@@ -23,8 +23,6 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}"/dispercur
 instdir="/usr/share/${PN}"
 
-#PYTHON_MODNAME="disper"
-
 src_compile() {
 	sed -e "s:#PREFIX#/share/${PN}/src:$instdir:" < ${PN}.in > ${PN}
 }
@@ -34,7 +32,7 @@ src_install() {
 		insinto "${instdir}${dir}"
 		doins "src${dir}"/*
 	done
-#	doman ${PN}.1.in
+	doman ${PN}.1.in
 	dodoc README TODO
 	dobin ${PN}
 }
