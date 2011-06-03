@@ -29,17 +29,6 @@ src_unpack() {
 }
 
 src_install() {
-	dodir "${instdir}" || die "dodir failed"
-	insinto "${instdir}"
-	mv src/disper-applet.py.substituted src/disper-applet.py
-	doins src/*.py
-	fperms 755 ${instdir}/disper-applet.py
+	emake DESTDIR="${D}" install || die "Install failed"
 	dodoc README
-
-	dodir /usr/share/pixmaps/${PN}/ || die "dodir failed"
-	insinto /usr/share/pixmaps/${PN}/ || die "insinto failed"
-	doins src/pixmaps/*
-
-	insinto /usr/share/applications
-	doins data/Disper-Indicator.desktop
 }
