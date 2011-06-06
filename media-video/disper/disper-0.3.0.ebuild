@@ -23,10 +23,6 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}"/dispercur
 instdir="/usr/share/${PN}"
 
-src_compile() {
-	sed -e "s:#PREFIX#/share/${PN}/src:$instdir:" < ${PN}.in > ${PN}
-}
-
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 	doman ${PN}.1
