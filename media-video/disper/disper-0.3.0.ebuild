@@ -31,6 +31,4 @@ src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 	doman ${PN}.1
 	dodoc README TODO
-	dobin ${PN}
 }
-
