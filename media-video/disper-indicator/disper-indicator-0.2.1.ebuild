@@ -24,7 +24,6 @@ instdir="/usr/share/${PN}"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/disper_python_append.diff
 	epatch "${FILESDIR}"/makefile_sed.diff
 }
 

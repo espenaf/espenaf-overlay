@@ -28,11 +28,8 @@ src_compile() {
 }
 
 src_install() {
-	for dir in "" $(find src -type d -print | sed -e 's#src##g') ; do
-		insinto "${instdir}${dir}"
-		doins "src${dir}"/*
-	done
-	doman ${PN}.1.in
+	emake DESTDIR="${D}" install || die "Install failed"
+	doman ${PN}.1
 	dodoc README TODO
 	dobin ${PN}
 }
