@@ -8,6 +8,7 @@
     <flag name="brnet">Brazil cable tv listing grabber</flag>
     <flag name="ch">Switzerland bluewin tv listing grabber</flag>
     <flag name="dk">Denmark tv listing grabber</flag>
+    <flag name="dk_dr">Denmark alternativ tv listing grabber</flag>
     <flag name="dtvla">Latin America digital tv listing grabber</flag>
     <flag name="ee">Estonia tv listing grabber</flag>
     <flag name="es_laguiatv">Spain alternative grabber</flag>
@@ -15,9 +16,12 @@
     <flag name="es">Spain tv listing grabber</flag>
     <flag name="eu_epg">EPG grabber for some European countries.</flag>
     <flag name="fi">Finland tv listing grabber</flag>
+    <flag name="fi_se">Finland alternativ tv listing grabber</flag>
     <flag name="fr">France tv listing grabber</flag>
     <flag name="hr">Croatia tv listing grabber</flag>
     <flag name="huro">Hungarian tv listing grabber</flag>
+    <flag name="is">India tv listing grabber</flag>
+    <flag name="in">Israel tv listing grabber</flag>
     <flag name="is">Iceland tv listing grabber</flag>
     <flag name="it">Italy tv listing grabber</flag>
     <flag name="it_dvb">Italy tv listing grabber from DVB-S stream</flag>
@@ -31,6 +35,7 @@
     <flag name="no_gf">Norway Gfeed tv listing grabber</flag>
     <flag name="no">Norway tv listing grabber</flag>
     <flag name="pt">Portugal tv listing grabber</flag>
+    <flag name="pt_meo">Portugal alternativ tv listing grabber</flag>
     <flag name="re">Reunion Island (France) tv listing grabber</flag>
     <flag name="se_swedb">Sweden tv listing grabber</flag>
     <flag name="tv_check">enable GUI checking</flag>
