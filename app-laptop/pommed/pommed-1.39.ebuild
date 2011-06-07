@@ -6,7 +6,7 @@ inherit eutils toolchain-funcs linux-info
 
 DESCRIPTION="Manage special features such as screen and keyboard backlight on Apple MacBook Pro/PowerBook"
 HOMEPAGE="http://technologeek.org/projects/pommed/index.html"
-ALIOTH_NUMBER="3529"
+ALIOTH_NUMBER="3583"
 SRC_URI="http://alioth.debian.org/frs/download.php/${ALIOTH_NUMBER}/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -102,7 +102,6 @@ src_install() {
 		doins gpomme/gpomme-c.desktop
 		insinto /usr/share/gpomme/
 		doins -r gpomme/themes
-		doins gpomme/gpomme.glade
 	fi
 
 	if use X ; then
