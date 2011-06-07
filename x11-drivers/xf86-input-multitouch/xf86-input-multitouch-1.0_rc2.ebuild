@@ -10,20 +10,19 @@ DESCRIPTION="Multitouch-X-Driver for MT-Touchpads"
 HOMEPAGE="http://bitmath.org/code/multitouch/"
 SRC_URI="http://github.com/rydberg/Multitouch-X-Driver/tarball/v${PV/_/-} -> ${P}.tar.gz"
 
-S="${WORKDIR}/rydberg-Multitouch-X-Driver-90c1b69"
+S="${WORKDIR}/rydberg-Multitouch-X-Driver-fc4d145"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="
-	x11-base/xorg-server"
+RDEPEND="dev-libs/libmtdev
+         x11-base/xorg-server"
 DEPEND="${RDEPEND}
 	x11-proto/inputproto"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-
 }
 
 pkg_postinst() {
