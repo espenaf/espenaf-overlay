@@ -21,7 +21,6 @@ DEPEND="dev-lang/python"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"/dispercur
-instdir="/usr/share/${PN}"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
