@@ -8,7 +8,7 @@ DESCRIPTION="Set of utilities to manage TV listings stored in the XMLTV format."
 HOMEPAGE="http://xmltv.org/"
 SRC_URI="mirror://sourceforge/xmltv/${P}.tar.bz2"
 
-IUSE="ar ch dtvla uk_rt uk_bleb is it it_dvb na_dd na_icons fi es_laguiatv es_miguiatv ee re huro dk se_swedb hr no_gf fr pt eu_epg tv_combiner tv_pick_cgi tv_check na_dtv za"
+IUSE="ar ch dtvla uk_rt uk_bleb in il is it it_dvb na_dd na_icons fi fi_sv es_laguiatv es_miguiatv ee huro dk dk_dr se_swedb hr no_gf fr fr_kazer pt pt_meo eu_epg tv_combiner tv_pick_cgi tv_check za"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
@@ -63,11 +63,9 @@ DEPEND="${RDEPEND}
 	uk_rt? ( dev-perl/HTTP-Cache-Transparent dev-perl/IO-stringy )
 	uk_bleb? ( dev-perl/Archive-Zip dev-perl/IO-stringy )
 	ee? ( dev-perl/IO-stringy )
-	re? ( dev-perl/Lingua-EN-Numbers-Ordinate )
 	tv_combiner? ( dev-perl/XML-LibXML )
 	tv_check? ( dev-perl/perl-tk dev-perl/Tk-TableMatrix )
 	tv_pick_cgi? ( virtual/perl-CGI dev-perl/Lingua-EN-Numbers-Ordinate )
-	na_dtv? ( >=dev-perl/WWW-Mechanize-1.02 dev-perl/TimeDate dev-perl/IO-stringy dev-perl/XML-LibXML )
 	"
 
 make_config() {
@@ -94,6 +92,10 @@ make_config() {
 	#use be && echo "yes" || echo "no"
 	#Enable Iceland
 	use is && echo "yes" || echo "no"
+	#Enable India
+	use in && echo "yes" || echo "no"
+	#Enable Israel
+	use il && echo "yes" || echo "no"
 	# Enable Italy
 	use it && echo "yes" || echo "no"
 	# Enable Italy from DVB-S stream
@@ -104,24 +106,27 @@ make_config() {
 	use na_icons  && use na_dd && echo "yes" || echo "no"
 	# Enable Finland
 	use fi  && echo "yes" || echo "no"
+	# Enable Alternativ Finland
+	use fi_sv  && echo "yes" || echo "no"
+	# Enable Alternativ Finland
+	use fi_kazer  && echo "yes" || echo "no"
 	# Enable Spain
 	#use es  && echo "yes" || echo "no"
 	# Enable Spain Digital
 	# use es_digital && echo "yes" || echo "no"
-	# Israel Temporary Disabled
-	# use il && echo "yes" || echo "no"
-	#echo "no"
 	# Enable Spain Alternatives
 	use es_laguiatv && echo "yes" || echo "no"
 	use es_miguiatv && echo "yes" || echo "no"
 	# Enable Netherlands
-	#use nl  && echo "yes" || echo "no"
+	use nl  && echo "yes" || echo "no"
 	# Enable Alternate Netherlands
 	#use nl_wolf  && echo "yes" || echo "no"
 	# Enable Hungary and Romania
 	use huro  && echo "yes" || echo "no"
 	# Enable Denmark
 	use dk && echo "yes" || echo "no"
+	# Enable Alternativ Denmark
+	use dk_dr && echo "yes" || echo "no"
 	# Enable Japan
 	#use jp  && echo "yes" || echo "no"
 	# Enable Sweden
@@ -136,6 +141,8 @@ make_config() {
 	#use no  && echo "yes" || echo "no"
 	# Enable Portugal
 	use pt  && echo "yes" || echo "no"
+	# Enable Alternativ Portugal
+	use pt_meo  && echo "yes" || echo "no"
 	# Enable South Africa
 	use za  && echo "yes" || echo "no"
 	# Enable Europe epg
@@ -149,11 +156,11 @@ make_config() {
 	# Enable Estonia
 	use ee && echo "yes" || echo "no"
 	# Enable Reunion Island
-	use re && echo "yes" || echo "no"
+	#use re && echo "yes" || echo "no"
 	# Enable Caledonie Island
 	#use nc && echo "yes" || echo "no"
 	# Enable North America DirecTV
-	use na_dtv && echo "yes" || echo "no"
+	#use na_dtv && echo "yes" || echo "no"
 }
 
 src_unpack() {
