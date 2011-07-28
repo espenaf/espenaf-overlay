@@ -1,0 +1,24 @@
+--- mythvideo-scanner/mythvideo-scanner.pl     2011-03-06 10:23:58.000000000 +0100
++++ mythvideo-scanner/mythvideo-scanner.pl     2011-07-28 13:48:48.770182553 +0200
+@@ -162,7 +162,7 @@
+ 
+ 
+ #don't decend beyond these directory names.
+-my @blacklist = ('sample','subs','VIDEO_TS','proof');
++my @blacklist = ('sample','subs','VIDEO_TS','proof','BDMV');
+ 
+ # Scene markers that help find info in the filename
+ my $markers;
+m
+--- mythvideo-cleaner.pl.org    2011-07-28 16:15:49.683861479 +0200
++++ mythvideo-cleaner.pl        2011-07-28 16:16:11.883076210 +0200
+@@ -73,7 +73,7 @@
+ }
+ 
+ #This is the current blacklist.
+-my @blacklist = ('sample','subs','VIDEO_TS','proof');
++my @blacklist = ('sample','subs','VIDEO_TS','proof','BDMV');
+ 
+ my $remove;
+ my $nexist=0;
+

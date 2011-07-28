@@ -23,7 +23,7 @@ DEST=/usr/share/${PN}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-        epatch ${FILESDIR}/blacklist_bdmn.patch
+        epatch ${FILESDIR}/blacklist.patch
 }
 
 src_install() {
