@@ -9,9 +9,8 @@
  
  # Scene markers that help find info in the filename
  my $markers;
-m
---- mythvideo-cleaner.pl.org    2011-07-28 16:15:49.683861479 +0200
-+++ mythvideo-cleaner.pl        2011-07-28 16:16:11.883076210 +0200
+--- mythvideo-scanner/mythvideo-cleaner.pl.org    2011-07-28 16:15:49.683861479 +0200
++++ mythvideo-scanner/mythvideo-cleaner.pl        2011-07-28 16:16:11.883076210 +0200
 @@ -73,7 +73,7 @@
  }
  
