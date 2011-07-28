@@ -15,7 +15,8 @@ IUSE=""
 
 RDEPEND="dev-lang/perl"
 DEPEND="dev-lang/perl
-	dev-perl/Text-Levenshtein"
+	dev-perl/Text-Levenshtein
+	>=media-plugins/mythvideo-0.24"
 
 DEST=/usr/share/${PN}
 
