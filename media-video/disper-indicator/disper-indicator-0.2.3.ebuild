@@ -7,7 +7,7 @@ inherit eutils multilib python
 
 DESCRIPTION="Disper-indicator is an UI for the display switch utility disper"
 HOMEPAGE="https://launchpad.net/~nmellegard/"
-SRC_URI="https://launchpad.net/~nmellegard/+archive/disper-indicator-ppa/+files/disper-indicator_${PV}-1.tar.gz"
+SRC_URI="https://launchpad.net/~nmellegard/+archive/disper-indicator-ppa/+files/disper-indicator_${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
