@@ -7,7 +7,7 @@ inherit eutils versionator
 SLOT="$(get_major_version)"
 RDEPEND=">=virtual/jdk-1.6"
 
-MY_PV="107.587"
+MY_PV="111.167"
 
 RESTRICT="strip"
 QA_TEXTRELS="opt/${P}/bin/libbreakgen.so"
@@ -25,6 +25,8 @@ src_install() {
 	insinto "${dir}"
 	doins -r *
 	fperms 755 "${dir}/bin/${PN}.sh"
+	fperms 755 "${dir}/bin/fsnotifier"
+	fperms 755 "${dir}/bin/fsnotifier64"
 	local exe=${PN}-${SLOT}
 	local icon=${exe}.png
 	newicon "bin/${PN}32.png" ${icon}
