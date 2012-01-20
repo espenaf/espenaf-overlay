@@ -4,15 +4,13 @@
 
 inherit eutils
 
-#IUSE="fullheaders"
-
-DESCRIPTION="fwbackups"
+DESCRIPTION="fwbackups is a feature-rich user backup program"
 HOMEPAGE="http://www.diffingo.com/oss/fwbackups"
 SRC_URI="http://downloads.diffingo.com/${PN}/${PN}-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 
 DEPEND="virtual/cron
 	dev-lang/python
@@ -22,15 +20,11 @@ DEPEND="virtual/cron
 	dev-python/notify-python"
 
 src_compile() {
-
         econf || die "configure failed"
-
         emake || die "make failed"
-
 }
 
 src_install () {
-
 	emake DESTDIR="${D}" install || die "install failed"
 }
 
