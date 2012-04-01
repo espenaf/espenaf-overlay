@@ -7,7 +7,7 @@ inherit eutils versionator
 SLOT="$(get_major_version)"
 RDEPEND=">=virtual/jdk-1.6"
 
-MY_PV="117.105"
+MY_PV="117.117"
 
 RESTRICT="strip"
 QA_TEXTRELS="opt/${P}/bin/libbreakgen.so"
@@ -29,7 +29,7 @@ src_install() {
 	fperms 755 "${dir}/bin/fsnotifier64"
 	local exe=${PN}-${SLOT}
 	local icon=${exe}.png
-	newicon "bin/${PN}32.png" ${icon}
+	newicon "bin/${PN}.png" ${icon}
 	dodir /usr/bin
 	cat > "${D}/usr/bin/${exe}" <<-EOF
 #!/bin/sh
