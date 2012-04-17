@@ -19,3 +19,9 @@ DEPEND="dev-lang/python
 	>=www-servers/tornado-2.2"
 RDEPEND="${DEPEND}"
 
+
+src_install() {
+        distutils_src_install
+        doinitd ${FILESDIR}/gateone
+        doconfd ${FILESDIR}/conf/gateone
+}

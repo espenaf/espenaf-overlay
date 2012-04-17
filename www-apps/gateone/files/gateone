@@ -1,0 +1,35 @@
+#!/sbin/runscript
+
+extra_commands="killterms reload"
+GATEONE_DIR=/opt/gateone
+
+depend() {
+        need net
+        after bootmisc
+}
+
+start() {
+        ebegin "Starting GateOne SSHd"
+        start-stop-daemon --background --start --exec ${GATEONE_DIR}/gateone.py -- ${GATEONE_OPTS}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping GateOne SSHd"
+        start-stop-daemon --stop --name gateone.py
+        eend $?
+}
+
+reload()
+{
+        stop
+        killterms
+        start
+}
+
+killterms()
+{
+        einfo "Killing existing terminal sessions..."
+        ${GATEONE_DIR}/gateone.py --kill
+}
+

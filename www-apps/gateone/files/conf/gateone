@@ -1,0 +1,4 @@
+# Options to pass to gateone.py.
+# Don't pass --daemon, it will already be daemonized.
+#GATEONE_OPTS=--session_logging
+
