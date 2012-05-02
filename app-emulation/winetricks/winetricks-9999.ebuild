@@ -6,7 +6,7 @@ EAPI="2"
 inherit subversion
 DESCRIPTION="Quick and dirty script to download and install various redistributable runtime libraries"
 HOMEPAGE="http://wiki.winehq.org/winetricks"
-ESVN_REPO_URI="http://winezeug.googlecode.com/svn/trunk/"
+ESVN_REPO_URI="http://winetricks.googlecode.com/svn/trunk/"
 SRC_URI=""
 
 LICENSE="AS-IS"
@@ -19,6 +19,7 @@ RDEPEND="${DEPEND}"
 
 src_install()
 {
-	dobin winetricks
+	dobin src/winetricks
+	doman src/winetricks.1
 }
 
