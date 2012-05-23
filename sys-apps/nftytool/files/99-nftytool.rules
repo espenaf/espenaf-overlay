@@ -1,0 +1,3 @@
+# Set the Infinity USB card programmer to phoenix mode by default
+ACTION=="add|change", SUBSYSTEM=="usb", ATTR{idVendor}=="104f", ATTR{idProduct}=="0001", IMPORT{program}+="/usr/bin/nftytool -p phoenix -- -p phoenix -f 3.58 -e"
+
