@@ -7,7 +7,7 @@ inherit eutils versionator
 SLOT="$(get_major_version)"
 RDEPEND=">=virtual/jdk-1.6"
 
-MY_PV="117.798"
+MY_PV="117.963"
 
 RESTRICT="strip"
 QA_TEXTRELS="opt/${P}/bin/libbreakgen.so"
@@ -36,6 +36,6 @@ src_install() {
 /opt/${P}/bin/${PN}.sh \$@
 EOF
 	fperms 755 /usr/bin/${exe}
-	make_desktop_entry ${exe} "IntelliJ IDEA ${PV}" ${icon} "Development;IDE"
+	make_desktop_entry ${exe} "IntelliJ IDEA ${PV}" /opt/${P}/bin/${PN}.png "Development;IDE"
 }
 
