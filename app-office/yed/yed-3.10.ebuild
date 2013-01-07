@@ -23,11 +23,9 @@ src_install() {
         cd "${S}"
 	java-pkg_dojar ${PN}.jar
 
-	java-pkg_dolauncher ${PN} --jar ${PN}.jar\
-		-into "/usr"
+	java-pkg_dolauncher ${PN} --jar ${PN}.jar -into "/usr"
 
         doicon "${FILESDIR}"/yed_icon.png
-        make_desktop_entry yed yEd yed_icon "Graphics;VectorGraphics"
-
+        make_desktop_entry yed yEd yed_icon "Graphics;2DGraphics"
 }
 
