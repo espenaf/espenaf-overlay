@@ -3,7 +3,7 @@
 <repositories xmlns="" version="1.0">
   <repo quality="experimental" status="unofficial">
     <name><![CDATA[espenaf]]></name>
-    <description><![CDATA[espenaf Gentoo overlay]]></description>
+    <description><![CDATA[espenaf's private overlay]]></description>
     <homepage>https://wiki.github.com/espenaf/</homepage>
     <owner>
       <email>espenaf@gmail.com</email>
