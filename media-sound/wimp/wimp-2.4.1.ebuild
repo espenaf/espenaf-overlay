@@ -4,7 +4,7 @@
 
 inherit eutils
 
-MY_P="WiMP.${PV}.1022.production.NO.air"
+MY_P="Wimp-${PV}.air"
 DESCRIPTION="The Adobe Air based Streaming Client for the Telenor Wimp Service, the NO version."
 HOMEPAGE="http://wimp.aspiro.com/"
 SRC_URI="http://wimp.aspiro.com/wweb/resources/wimp_files/NO_35/release/$MY_P"
