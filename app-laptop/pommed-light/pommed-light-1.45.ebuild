@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit eutils toolchain-funcs linux-info
+inherit eutils toolchain-funcs linux-info systemd
 
 DESCRIPTION="Manage special features such as screen and keyboard backlight on Apple MacBook Pro/PowerBook"
 HOMEPAGE="https://github.com/bytbox/pommed-light"
@@ -13,7 +13,7 @@ SRC_URI="https://github.com/bytbox/pommed-light/archive/v${PV}lw.zip"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
-IUSE=""
+IUSE="systemd"
 
 COMMON_DEPEND="media-libs/alsa-lib
 	x86? ( sys-apps/pciutils )
@@ -51,9 +51,10 @@ src_install() {
 	insinto /usr/share/pommed
 	doins pommed/data/*.wav
 
-	dobin pommed/pommed
+	dosbin pommed/pommed
 
 	newinitd "${FILESDIR}"/pommed.rc pommed
+	systemd_dounit pommed.service
 
 	dodoc AUTHORS ChangeLog README.md TODO
 }
