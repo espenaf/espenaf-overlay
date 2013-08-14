@@ -54,7 +54,8 @@ src_install() {
 	dosbin pommed/pommed
 
 	newinitd "${FILESDIR}"/pommed.rc pommed
-	systemd_dounit pommed.service
-
+	if use systemd; then
+		systemd_dounit pommed.service
+	fi
 	dodoc AUTHORS ChangeLog README.md TODO
 }
