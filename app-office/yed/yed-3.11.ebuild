@@ -10,6 +10,7 @@ LICENSE="yed"
 SLOT="0"
 KEYWORDS="~x86 ~sparc ~ppc amd64 ppc64"
 IUSE=""
+RESTRICT="fetch"
 
 RDEPEND=">=virtual/jre-1.6
         ${COMMON_DEP}"
