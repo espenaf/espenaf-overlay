@@ -16,7 +16,8 @@ RDEPEND="app-arch/bzip2
         media-libs/libsdl2
         media-sound/lame
         sys-libs/zlib
-	media-libs/speex
+	media-libs/chromaprint
+        media-libs/speex
         "
 
 DEPEND="${RDEPEND}"
