@@ -17,6 +17,7 @@ RDEPEND="app-arch/bzip2
         media-sound/lame
         sys-libs/zlib
 	media-libs/chromaprint
+        media-libs/speex
         "
 
 DEPEND="${RDEPEND}"
@@ -28,7 +29,6 @@ src_configure() {
                 "-DLIBAV_AVFILTER_LIBRARY="
                 "-DLIBAV_AVFORMAT_LIBRARY="
                 "-DLIBAV_AVUTIL_LIBRARY="
-		"-DEBUR128_IS_BUNDLED="
         )
 
         cmake-utils_src_configure
